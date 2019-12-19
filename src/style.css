@@ -6,29 +6,37 @@ body {
 #title {
     text-align: center;
     font-family: arial, sans-serif;
+    padding: 25px;
 }
 
 #general-section {
     width: 100%;
 }
 
-#content-section {
-    width: 33.3%;
+.content-section {
+    float: left;
+    width: 33%;
 }
 
 .title-section {
     width: 33%;
     text-align: center;
+    margin: 0 auto;
 }
 
 .insert-section {
-    width: 33%;
+    width: 100%;
     text-align: center;
     padding: 10px;
 }
 
-.insert-section input:nth-child(1) {
-    margin-right: 10px;
+.insert-section input {
+    display: block;
+    margin: 0 auto;
+}
+
+.insert-section button[type='submit'] {
+    margin-top: 10px;
 }
   
 #data-section {
@@ -36,7 +44,7 @@ body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     border: 3px solid #ddd;
-    width: 33%;
+    width: 100%;
 }
 
 #data-section td, #data-section th {
@@ -58,4 +66,8 @@ body {
     text-align: center;
     background-color: #4CAF50;
     color: white;
+}
+
+#item #data-section th {
+    width: 33%;
 }

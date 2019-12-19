@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import './style.css'
 
 import Cart from './Cart';
+import Item from './Item';
 
 class App extends Component {
 	constructor() {
@@ -18,6 +19,7 @@ class App extends Component {
 				<h1 id="title">Shopping Cart</h1>
 				<div id="general-section">
 					<Cart />
+					<Item />
 				</div>
 			</div>
 		);

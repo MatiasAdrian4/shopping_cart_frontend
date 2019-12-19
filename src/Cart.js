@@ -4,6 +4,7 @@ class Cart extends Component {
 
 	constructor(props) {
 		super(props)
+
 		this.state = {
 			carts: [],
 			id: '',
@@ -33,15 +34,16 @@ class Cart extends Component {
 	}
 
 	addCart = () => {
+		let body = {
+			'id' : this.state.id
+		}
 		fetch('http://localhost:8081/add_cart/', {
 			method: 'post',
 			headers: {
 				'Accept': 'application/json, text/plain, */*',
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({
-				'id' : this.state.id
-			})
+			body: JSON.stringify(body)
 		}).then(res=>res.json()).then(
 			res => {
 				let state = {}
@@ -49,7 +51,7 @@ class Cart extends Component {
 				if (!carts) {
 					carts = []
 				}
-				carts.push( {"id" : res["id"] } )
+				carts.push(body)
 				state['carts'] = carts
 				this.setState(state)
 			}
@@ -57,11 +59,13 @@ class Cart extends Component {
 	}
 
 	renderTableHeader() {
-		if(this.state.carts[0]) {
-			let header = Object.keys(this.state.carts[0])
-			return header.map((key, index) => {
-				return <th key={index}>{key.toUpperCase()}</th>
-			})
+		if(this.state.carts) {
+			if(this.state.carts[0]) {
+				let header = Object.keys(this.state.carts[0])
+				return header.map((key, index) => {
+					return <th key={index}>{key.toUpperCase()}</th>
+				})
+			}
 		}
 	}
 
@@ -80,12 +84,13 @@ class Cart extends Component {
 
 	render() {
 		return (
-			<div class="content-section">
+			<div id="cart" class="content-section">
 				<h2 class="title-section">Carts</h2>
 				<div class="insert-section">
 					<input 
 						type="text" 
 						name="idCart"
+						placeholder="Id"
 						onChange = {(ev) => { this.syncChanges('id', ev.target.value) }}
 					/>
 					<button type="submit" onClick={ this.addCart }>Añadir Carro</button>
