@@ -116,7 +116,7 @@ class Item extends Component {
 						placeholder="Price"
 						onChange = {(ev) => { this.syncChanges('price', ev.target.value) }}
 					/>
-					<button type="submit" onClick={ this.addItem }>Añadir Item</button>
+					<button type="submit" onClick={ this.addItem }>Add Item</button>
 				</div>
 				<table id="data-section">
 					<tbody>

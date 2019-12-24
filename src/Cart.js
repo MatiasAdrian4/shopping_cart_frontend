@@ -93,7 +93,7 @@ class Cart extends Component {
 						placeholder="Id"
 						onChange = {(ev) => { this.syncChanges('id', ev.target.value) }}
 					/>
-					<button type="submit" onClick={ this.addCart }>Añadir Carro</button>
+					<button type="submit" onClick={ this.addCart }>Add Carro</button>
 				</div>
 				<table id="data-section">
 					<tbody>

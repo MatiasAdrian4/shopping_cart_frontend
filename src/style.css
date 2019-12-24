@@ -35,8 +35,8 @@ body {
     margin: 0 auto;
 }
 
-.insert-section button[type='submit'] {
-    margin-top: 10px;
+.insert-section button {
+    margin: 10px 0px;
 }
   
 #data-section {
@@ -45,6 +45,7 @@ body {
     border-collapse: collapse;
     border: 3px solid #ddd;
     width: 100%;
+    margin-bottom: 30px;
 }
 
 #data-section td, #data-section th {
